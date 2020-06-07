@@ -1,0 +1,367 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: 400 16px/1.5 PingFangSC-regular, Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    -moz-user-select: none;
+    background: #fafafc;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+
+/* 头部区域 */
+
+.search_div {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    max-width: 540px;
+    min-width: 320px;
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
+    /* background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; */
+}
+
+.search {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    border: 1px solid #fff;
+    margin: 6px 10px;
+    border-radius: 13px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+    line-height: 24px;
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(../img/user.png) no-repeat 0px 0px;
+    background-size: 22px;
+    margin-left: 5px;
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+.user::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(../img/user.png) no-repeat 0px -37px;
+    background-size: 22px auto;
+    margin: 5px auto -2px;
+}
+
+
+/* goBack区域 */
+
+.goBack {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    background: url(../img/back.png) no-repeat;
+    background-size: 38px 38px;
+    z-index: 10;
+}
+
+
+/* focus区域 */
+
+.focus {
+    position: relative;
+    padding-top: 44px;
+    overflow: hidden;
+}
+
+.focus img {
+    width: 100%;
+    display: block;
+}
+
+.focus ul {
+    overflow: hidden;
+    width: 500%;
+    margin-left: -100%;
+}
+
+.focus ul li {
+    float: left;
+    width: 20%;
+}
+
+.focus ol {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 0;
+}
+
+.focus ol li {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    list-style: none;
+    border-radius: 2px;
+    transition: all .3s;
+}
+
+.focus ol li.current {
+    width: 15px;
+}
+
+
+/* local_nav区域 */
+
+.local_nav {
+    display: flex;
+    height: 64px;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.local_nav li {
+    flex: 1;
+}
+
+.local_nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.local_nav li [class^="icon"] {
+    margin-top: 8px;
+    width: 32px;
+    height: 32px;
+    background: url(../img/local.png) no-repeat;
+    background-size: 40px;
+}
+
+.local_nav li [class^="icon_icon2"] {
+    background-position: -4px -42px;
+}
+
+.local_nav li [class^="icon_icon3"] {
+    background-position: -4px -82px;
+}
+
+.local_nav li [class^="icon_icon4"] {
+    background-position: -4px -122px;
+}
+
+.local_nav li [class^="icon_icon5"] {
+    background-position: -4px -162px;
+}
+
+
+/* nav区域 */
+
+nav {
+    border-radius: 8px;
+    margin: 0 4px 3px;
+    overflow: hidden;
+}
+
+.nav_common {
+    display: flex;
+    height: 88px;
+    background: skyblue;
+}
+
+.nav_common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_item:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav_item a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav_item a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+.nav_item:nth-child(1) a {
+    border: 0;
+    background: url(../img/hotel1.png) no-repeat bottom right;
+    background-size: 108px;
+}
+
+.nav_common:nth-child(2) .nav_item:nth-child(1) a {
+    border: 0;
+    background: url(../img/plane.png) no-repeat bottom right;
+    background-size: 108px;
+}
+
+.nav_common:nth-child(3) .nav_item:nth-child(1) a {
+    border: 0;
+    background: url(../img/beach.png) no-repeat bottom right;
+    background-size: 108px;
+}
+
+.nav_common:nth-child(1) {
+    background: -webkit-linear-gradient(left, #FA5A55, #FA994D);
+}
+
+.nav_common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4b8fed, #53bced);
+}
+
+.nav_common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34c2aa, #6cd557);
+}
+
+.subnav_entry {
+    display: flex;
+    border-radius: 8px;
+    margin: 0 4px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.subnav_entry li {
+    flex: 20%;
+}
+
+.subnav_entry a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subnav_entry_icon {
+    width: 28px;
+    height: 28px;
+    background-color: skyblue;
+    margin-top: 4px;
+    background: url(../img/ul.png) no-repeat;
+    background-size: 28px;
+}
+
+.sales {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.sales_hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales_hd h2 {
+    position: relative;
+    text-indent: -999px;
+}
+
+.sales_hd h2::after {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    content: "";
+    width: 79px;
+    height: 15px;
+    background: url(../img/hot.png) no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+.sales_hd a {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    background: -webkit-linear-gradient(left, #ff4e63, #ff6cc9);
+    border-radius: 8px;
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}
+
+.sales_hd a::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+.row a img {
+    width: 100%;
+}
